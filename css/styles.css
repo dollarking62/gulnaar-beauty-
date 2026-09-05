@@ -1,0 +1,1264 @@
+/* ==========================================================================
+   GULNAAR ATELIER — Master Editorial Stylesheet
+   Asymmetric Grids, Full-Width Photography, Responsive Layouts
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   General Section Layouts & Containers
+   -------------------------------------------------------------------------- */
+.editorial-section {
+  position: relative;
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.editorial-section-compact {
+  padding: var(--space-xl) 0;
+}
+
+.editorial-section-tall {
+  padding: var(--space-3xl) 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3vw, 3rem);
+}
+
+.container-wide {
+  max-width: var(--container-wide);
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+}
+
+.bg-ivory {
+  background-color: var(--color-ivory);
+}
+
+.bg-blush {
+  background-color: var(--color-blush-beige);
+}
+
+.bg-espresso {
+  background-color: var(--color-espresso);
+  color: var(--color-ivory);
+}
+
+.bg-plum {
+  background-color: var(--color-plum-deep);
+  color: var(--color-ivory);
+}
+
+.section-header-editorial {
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-header-editorial .section-headline {
+  margin-top: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   01. HERO SECTION — Asymmetric Magazine Cover Layout
+   -------------------------------------------------------------------------- */
+.hero-section {
+  min-height: 100vh;
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(145deg, var(--color-ivory) 0%, var(--color-blush-beige) 100%);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 4vw, 5rem);
+  align-items: center;
+}
+
+.hero-visual-col {
+  position: relative;
+  order: 2;
+}
+
+.hero-image-frame {
+  position: relative;
+  height: clamp(520px, 68vh, 760px);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.hero-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transform: scale(1.03);
+  transition: transform 1.2s var(--ease-editorial);
+}
+
+.hero-image-frame:hover img {
+  transform: scale(1.07);
+}
+
+/* Floating Badges on Hero */
+.hero-badge-overlay {
+  position: absolute;
+  top: 2rem;
+  left: -1.5rem;
+  background-color: rgba(20, 8, 15, 0.88);
+  backdrop-filter: blur(12px);
+  color: var(--color-ivory);
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: var(--shadow-editorial);
+  z-index: 10;
+  max-width: 220px;
+}
+
+.hero-badge-overlay .badge-caption {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--color-gold-warm);
+  line-height: 1.2;
+}
+
+.hero-badge-overlay .badge-sub {
+  font-size: 0.65rem;
+  font-family: var(--font-ui);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-taupe-light);
+  margin-top: 4px;
+}
+
+.hero-badge-bottom {
+  position: absolute;
+  bottom: 2rem;
+  right: -1.5rem;
+  background: var(--color-burgundy);
+  color: var(--color-ivory);
+  padding: 0.75rem 1.35rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  box-shadow: var(--shadow-editorial);
+  z-index: 10;
+}
+
+.hero-content-col {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.hero-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(74, 14, 28, 0.12);
+  margin-top: 1rem;
+}
+
+.hero-stat-item .stat-value {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--color-burgundy-deep);
+  line-height: 1;
+}
+
+.hero-stat-item .stat-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-taupe);
+  margin-top: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   02. BEAUTY JOURNEY — Kinetic Typography & Side Portrait
+   -------------------------------------------------------------------------- */
+.journey-section {
+  background-color: var(--color-burgundy-deep);
+  color: var(--color-ivory);
+  padding: clamp(4rem, 8vw, 7.5rem) 0;
+  position: relative;
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: center;
+}
+
+.kinetic-word-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.kinetic-word {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(250, 247, 242, 0.35);
+  transition: all 0.5s ease;
+  cursor: default;
+}
+
+.kinetic-word:hover,
+.kinetic-word.active-word {
+  color: var(--color-gold-warm);
+  -webkit-text-stroke: 1px var(--color-gold-warm);
+  padding-left: 1.25rem;
+}
+
+.journey-image-wrapper {
+  position: relative;
+  height: clamp(440px, 55vh, 620px);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: var(--shadow-deep);
+}
+
+.journey-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s ease;
+}
+
+.journey-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* --------------------------------------------------------------------------
+   03. VERTICALLY STACKED EDITORIAL SERVICE LIST (01-07)
+   -------------------------------------------------------------------------- */
+.editorial-services-stack {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 6vw, 6rem);
+}
+
+.editorial-service-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5.5rem);
+  align-items: center;
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  border-bottom: 1px solid rgba(74, 14, 28, 0.1);
+}
+
+.editorial-service-row:nth-child(even) {
+  direction: rtl;
+}
+
+.editorial-service-row:nth-child(even) .service-row-content,
+.editorial-service-row:nth-child(even) .service-row-media {
+  direction: ltr;
+}
+
+.service-row-media {
+  position: relative;
+  height: clamp(380px, 48vh, 520px);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-editorial);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.service-row-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-editorial);
+}
+
+.service-row-media:hover img {
+  transform: scale(1.06);
+}
+
+.service-row-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.service-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.service-meta-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--color-taupe);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.75rem 0;
+  border-top: 1px dashed rgba(74, 14, 28, 0.15);
+  border-bottom: 1px dashed rgba(74, 14, 28, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   04. MAKEUP SECTION — Full-Screen Editorial Showcase
+   -------------------------------------------------------------------------- */
+.makeup-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+.makeup-card {
+  position: relative;
+  height: clamp(380px, 46vh, 480px);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid rgba(74, 14, 28, 0.08);
+  group: card;
+  cursor: pointer;
+}
+
+.makeup-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.85s var(--ease-editorial);
+}
+
+.makeup-card:hover img {
+  transform: scale(1.08);
+}
+
+.makeup-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 1.75rem;
+  background: linear-gradient(to top, rgba(20, 8, 15, 0.94) 0%, rgba(20, 8, 15, 0.4) 65%, transparent 100%);
+  color: var(--color-ivory);
+  transition: transform 0.35s ease;
+}
+
+.makeup-card-overlay h4 {
+  color: var(--color-ivory);
+  font-size: 1.45rem;
+  margin-bottom: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   06. HOW THE MAKEUP IS DONE — Cinematic 8-Step Timeline
+   -------------------------------------------------------------------------- */
+.steps-horizontal-scroll {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+  position: relative;
+}
+
+.step-card {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-gold-warm);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.step-image-thumb {
+  height: 180px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.step-image-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.step-num-badge {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--color-gold-warm);
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   07. HAIR STUDIO
+   -------------------------------------------------------------------------- */
+.hair-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.hair-card {
+  background: var(--color-ivory-warm);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(74, 14, 28, 0.08);
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hair-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-editorial);
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.hair-card-media {
+  height: 280px;
+  overflow: hidden;
+}
+
+.hair-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.hair-card:hover .hair-card-media img {
+  transform: scale(1.07);
+}
+
+.hair-card-content {
+  padding: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   09 & 10. FACE & BODY CARE SANCTUARY
+   -------------------------------------------------------------------------- */
+.care-ritual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 4.5rem);
+  align-items: center;
+}
+
+.care-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.care-feature-item {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background-color: var(--color-ivory-warm);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-gold-warm);
+  box-shadow: var(--shadow-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   11 & 12. BRIDAL EXPERIENCE & LOOKBOOK
+   -------------------------------------------------------------------------- */
+.bridal-hero-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: center;
+  margin-bottom: clamp(3rem, 6vw, 6rem);
+}
+
+.bridal-image-master {
+  position: relative;
+  height: clamp(520px, 68vh, 740px);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-deep);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.bridal-image-master img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.bridal-journey-timeline {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 1.75rem 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.bridal-stage-node .stage-num {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--color-gold-warm);
+}
+
+.bridal-stage-node .stage-title {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Bridal Lookbook Grid */
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.lookbook-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-espresso);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: var(--shadow-editorial);
+  transition: transform 0.3s ease;
+}
+
+.lookbook-card:hover {
+  transform: translateY(-6px);
+}
+
+.lookbook-media {
+  height: 420px;
+  overflow: hidden;
+}
+
+.lookbook-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.lookbook-card:hover .lookbook-media img {
+  transform: scale(1.07);
+}
+
+.lookbook-info {
+  padding: 1.75rem;
+  color: var(--color-ivory);
+}
+
+/* --------------------------------------------------------------------------
+   13. OCCASION LOOKS
+   -------------------------------------------------------------------------- */
+.occasion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.occasion-card {
+  position: relative;
+  height: 360px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-subtle);
+}
+
+.occasion-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.occasion-card:hover img {
+  transform: scale(1.08);
+}
+
+.occasion-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 8, 15, 0.92) 0%, rgba(20, 8, 15, 0.3) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.75rem;
+  color: var(--color-ivory);
+}
+
+/* --------------------------------------------------------------------------
+   15. STYLING SECTION — Sarees, Lehengas & Drape Architecture
+   -------------------------------------------------------------------------- */
+.styling-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 5.5rem);
+  align-items: center;
+}
+
+.styling-image-pair {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.25rem;
+}
+
+.styling-image-pair .img-tall {
+  height: 540px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-editorial);
+}
+
+.styling-image-pair .img-offset {
+  height: 460px;
+  margin-top: 3.5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-editorial);
+}
+
+.styling-image-pair img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   16. BEAUTY DETAILS — Macro Close-Ups
+   -------------------------------------------------------------------------- */
+.macro-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.macro-card {
+  position: relative;
+  height: 300px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: var(--shadow-deep);
+}
+
+.macro-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.macro-card:hover img {
+  transform: scale(1.1);
+}
+
+.macro-label {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: rgba(20, 8, 15, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold-warm);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   17. BEAUTY PACKAGES — Horizontal Luxury Cards
+   -------------------------------------------------------------------------- */
+.packages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.package-card-horizontal {
+  background: var(--color-ivory-warm);
+  border: 1px solid rgba(74, 14, 28, 0.12);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 3vw, 2.75rem);
+  display: grid;
+  grid-template-columns: 1.5fr 2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-subtle);
+}
+
+.package-card-horizontal:hover {
+  border-color: var(--color-gold-warm);
+  box-shadow: var(--shadow-editorial);
+  transform: translateY(-3px);
+}
+
+.package-card-horizontal.featured {
+  background: linear-gradient(135deg, var(--color-ivory-warm) 0%, var(--color-blush-beige) 100%);
+  border-color: var(--color-gold-warm);
+  box-shadow: 0 10px 35px rgba(212, 175, 55, 0.18);
+}
+
+.package-price-col {
+  text-align: right;
+}
+
+.package-price-val {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  color: var(--color-burgundy-deep);
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   18. ARTIST COLLECTIVE
+   -------------------------------------------------------------------------- */
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.artist-card {
+  background-color: var(--color-ivory-warm);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(74, 14, 28, 0.08);
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.3s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-gold-warm);
+  box-shadow: var(--shadow-editorial);
+}
+
+.artist-photo-frame {
+  height: 320px;
+  overflow: hidden;
+}
+
+.artist-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.artist-card:hover .artist-photo-frame img {
+  transform: scale(1.06);
+}
+
+.artist-info {
+  padding: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   19. STUDIO EXPERIENCE
+   -------------------------------------------------------------------------- */
+.studio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.studio-card {
+  position: relative;
+  height: 340px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.studio-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.studio-card:hover img {
+  transform: scale(1.08);
+}
+
+.studio-card-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(20, 8, 15, 0.9) 0%, transparent 100%);
+  color: var(--color-ivory);
+}
+
+/* --------------------------------------------------------------------------
+   20. PORTFOLIO & INSPIRATION (Masonry Grid)
+   -------------------------------------------------------------------------- */
+.portfolio-masonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.portfolio-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-subtle);
+  border: 1px solid rgba(74, 14, 28, 0.08);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  transition: transform 0.75s var(--ease-editorial);
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.07);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 8, 15, 0.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.75rem;
+  color: var(--color-ivory);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   21. CLIENT STORIES & REVIEWS
+   -------------------------------------------------------------------------- */
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.story-card {
+  background-color: var(--color-ivory-warm);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  border: 1px solid rgba(74, 14, 28, 0.08);
+  box-shadow: var(--shadow-subtle);
+}
+
+.story-card-thumb {
+  height: 100%;
+}
+
+.story-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-card-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reviews-carousel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.review-card {
+  background-color: var(--color-ivory-warm);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-stars {
+  color: var(--color-gold-warm);
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   22. BEAUTY JOURNAL
+   -------------------------------------------------------------------------- */
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+}
+
+.journal-card {
+  background: var(--color-ivory-warm);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(74, 14, 28, 0.08);
+  box-shadow: var(--shadow-subtle);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.journal-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-gold-warm);
+  box-shadow: var(--shadow-editorial);
+}
+
+.journal-media {
+  height: 240px;
+  overflow: hidden;
+}
+
+.journal-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.journal-card:hover .journal-media img {
+  transform: scale(1.08);
+}
+
+.journal-body {
+  padding: 1.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   24. CONTACT & LOCATION
+   -------------------------------------------------------------------------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-top: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.contact-item-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--color-gold-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.interactive-map-canvas-container {
+  height: 480px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: var(--shadow-deep);
+  position: relative;
+  background-color: var(--color-espresso);
+}
+
+#studioMapCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.map-card-badge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background-color: rgba(20, 8, 15, 0.92);
+  backdrop-filter: blur(12px);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-ivory);
+}
+
+/* --------------------------------------------------------------------------
+   25. FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--color-espresso);
+  color: var(--color-ivory);
+  padding: clamp(4rem, 7vw, 6.5rem) 0 2.5rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  margin-bottom: 4rem;
+}
+
+.footer-col-title {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold-warm);
+  margin-bottom: 1.5rem;
+}
+
+.footer-link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-link-list a {
+  color: var(--color-taupe-light);
+  font-size: 0.88rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-link-list a:hover {
+  color: var(--color-gold-warm);
+  transform: translateX(4px);
+}
+
+.footer-bottom-bar {
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--color-taupe-light);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS (Mobile, Tablet, Desktop)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hair-gallery-grid,
+  .artists-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .macro-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-top-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .nav-menu-desktop {
+    display: none;
+  }
+  .menu-toggle-btn {
+    display: flex;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hero-visual-col {
+    order: 1;
+  }
+  .hero-content-col {
+    order: 2;
+  }
+  .hero-image-frame {
+    height: 480px;
+  }
+  .journey-grid {
+    grid-template-columns: 1fr;
+  }
+  .editorial-service-row,
+  .editorial-service-row:nth-child(even) {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+  .editorial-service-row:nth-child(even) .service-row-media {
+    direction: ltr;
+  }
+  .makeup-grid,
+  .lookbook-grid,
+  .occasion-grid,
+  .studio-grid,
+  .portfolio-masonry,
+  .journal-grid,
+  .reviews-carousel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hair-color-explorer,
+  .bridal-hero-showcase,
+  .styling-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .styling-image-pair .img-offset {
+    margin-top: 0;
+  }
+  .quiz-steps-grid {
+    grid-template-columns: 1fr;
+  }
+  .quiz-result-box {
+    grid-template-columns: 1fr;
+  }
+  .package-card-horizontal {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .package-price-col {
+    text-align: left;
+  }
+  .steps-horizontal-scroll {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bridal-journey-timeline {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .stories-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-header {
+    height: 72px;
+  }
+  .brand-logo-main {
+    font-size: 1.35rem;
+  }
+  .hero-badge-overlay,
+  .hero-badge-bottom {
+    display: none;
+  }
+  .hero-stats-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .makeup-grid,
+  .lookbook-grid,
+  .occasion-grid,
+  .studio-grid,
+  .portfolio-masonry,
+  .journal-grid,
+  .reviews-carousel-grid,
+  .steps-horizontal-scroll,
+  .artists-grid,
+  .macro-grid {
+    grid-template-columns: 1fr;
+  }
+  .bridal-journey-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .story-card {
+    grid-template-columns: 1fr;
+  }
+  .story-card-thumb {
+    height: 220px;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+  .vertical-scroll-progress {
+    display: none;
+  }
+}

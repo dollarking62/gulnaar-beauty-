@@ -1,0 +1,147 @@
+/* ==========================================================================
+   GULNAAR ATELIER — Typography Stylesheet
+   Editorial Serifs, Modern Sans & Devanagari Accents
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* Editorial Headings */
+h1, h2, h3, h4, .font-serif, .editorial-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--color-burgundy-deep);
+}
+
+.hero-headline {
+  font-size: clamp(2.75rem, 7vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.98;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.section-headline {
+  font-size: clamp(2.25rem, 5vw, 4.25rem);
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.subsection-headline {
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.card-headline {
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  line-height: 1.2;
+}
+
+/* Uppercase Micro Labels */
+.eyebrow-label,
+.section-tag {
+  font-family: var(--font-ui);
+  font-size: 0.725rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--color-gold-warm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.eyebrow-label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--color-gold-warm);
+}
+
+.section-tag-burgundy {
+  color: var(--color-burgundy);
+}
+
+.section-tag-burgundy::before {
+  background-color: var(--color-burgundy);
+}
+
+/* Thin Editorial Numbers */
+.editorial-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-dusty-rose);
+  opacity: 0.75;
+  letter-spacing: -0.04em;
+}
+
+/* Devanagari Sanskrit Accents */
+.devanagari-accent {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  color: var(--color-gold-warm);
+  font-weight: 400;
+  display: block;
+}
+
+.devanagari-large {
+  font-size: 1.25rem;
+  letter-spacing: 0.15em;
+  opacity: 0.9;
+}
+
+/* Editorial Body Typography */
+p.lead-text {
+  font-family: var(--font-ui);
+  font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+  line-height: 1.65;
+  color: var(--color-charcoal-light);
+  font-weight: 300;
+}
+
+p.body-regular {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-taupe);
+  font-weight: 400;
+}
+
+.font-italic {
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+.text-gold {
+  color: var(--color-gold-warm) !important;
+}
+
+.text-burgundy {
+  color: var(--color-burgundy) !important;
+}
+
+.text-ivory {
+  color: var(--color-ivory) !important;
+}
+
+.text-rose {
+  color: var(--color-dusty-rose) !important;
+}
+
+/* Floating Vertical Side Text */
+.vertical-side-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-taupe-light);
+  white-space: nowrap;
+}
